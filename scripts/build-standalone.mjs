@@ -1,0 +1,15 @@
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+const root = new URL('../', import.meta.url);
+let html = await readFile(new URL('index.html', root), 'utf8');
+const css = await readFile(new URL('styles.css', root), 'utf8');
+let app = await readFile(new URL('app.mjs', root), 'utf8');
+const lib = await readFile(new URL('lib.mjs', root), 'utf8');
+const data = await readFile(new URL('data/cpi.json', root), 'utf8');
+const usData = await readFile(new URL('data/us-cpi.json', root), 'utf8');
+app = app.replace(/^import australianData .*$/m, () => `const australianData = ${data};`).replace(/^import usData .*$/m, () => `const usData = ${usData};`).replace(/^import \{.*\} from '\.\/lib\.mjs';$/m, () => lib.replaceAll('export ', ''));
+html = html.replace('<link rel="stylesheet" href="./styles.css" />', () => `<style>${css}</style>`).replace('<script type="module" src="./app.mjs"></script>', () => `<script>${app.replaceAll('</script', '<\\/script')}</script>`);
+await mkdir(new URL('dist/', root), { recursive: true });
+const target = new URL('dist/Australian Dollar Studio.html', root);
+await writeFile(target, html);
+console.log(`Standalone app saved: ${fileURLToPath(target)}`);

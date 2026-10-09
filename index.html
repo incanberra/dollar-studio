@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17595b" />
+  <meta name="description" content="Compare Australian purchasing power from 1850 to 2026 using historical ABS retail prices and CPI. Convert in either direction." />
+  <title>Australian Dollar Studio · Inflation converter</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#converter">Skip to converter</a>
+  <header>
+    <a class="brand" href="#" aria-label="Australian Dollar Studio home"><span class="mark" aria-hidden="true">$</span><span><strong>Australian Dollar Studio</strong><small>Purchasing power through time</small></span></a>
+    <nav aria-label="Main navigation"><a class="active" href="#converter">Converter</a><a href="#methodology">Data &amp; methodology</a></nav>
+    <span class="studio-label">ECONOMIC SECURITY TOOLS</span>
+  </header>
+  <main>
+    <div class="intro"><div><span class="eyebrow" id="country-range">AUSTRALIA · 1850–2026</span><h1>Put a dollar in perspective.</h1><p id="intro-description">Compare the buying power of Australian money, then and now.</p></div><button id="print" class="quiet-button"><span aria-hidden="true">↗</span> Print / save PDF</button></div>
+    <div class="data-bar"><span class="dot" aria-hidden="true"></span><span><strong id="source-label">ABS historical prices &amp; CPI</strong><span class="separator"> · </span><span id="data-period">2026 data through August</span></span><a href="#methodology">About the data <span aria-hidden="true">↗</span></a></div>
+    <section class="workspace" id="converter" aria-label="Australian dollar converter">
+      <form class="panel controls" id="conversion-form" novalidate>
+        <div class="panel-heading"><h2>Your comparison</h2><span class="badge" id="currency-badge">AUD</span></div>
+        <label for="currency">Currency</label><select id="currency" aria-describedby="currency-hint"><option value="AUD">Australian dollars (AUD)</option><option value="USD">US dollars (USD)</option></select><p class="hint" id="currency-hint">Compare purchasing power within the selected currency.</p>
+        <fieldset class="direction"><legend>Conversion direction</legend><div class="segmented"><label><input type="radio" name="direction" value="forward" checked /><span>Past → 2026</span></label><label><input type="radio" name="direction" value="reverse" /><span>2026 → past</span></label></div></fieldset>
+        <label for="amount" id="amount-label">Amount in the historical year</label>
+        <div class="amount-field"><span id="currency-symbol" aria-hidden="true">$</span><input id="amount" type="text" inputmode="decimal" value="100" aria-describedby="amount-hint amount-error" autocomplete="off" /></div>
+        <p class="hint" id="amount-hint">Australian dollars. Commas are welcome.</p><p class="error" id="amount-error" hidden></p>
+        <div class="label-row"><label for="year">Historical year</label><span id="period-kind" class="minor">Annual average</span></div>
+        <select id="year" aria-describedby="historical-note"></select>
+        <label class="sr-only" for="year-range">Adjust historical year</label><input id="year-range" type="range" min="1850" max="2026" value="2000" />
+        <div class="range-labels" aria-hidden="true"><span id="earliest-year">1850</span><span>2026</span></div>
+        <div class="quick-years" role="group" aria-label="Choose a historical year"><button type="button" data-year="1850">1850</button><button type="button" data-year="1901">1901</button><button type="button" data-year="1966">1966</button><button type="button" data-year="2000">2000</button><button type="button" data-year="2020">2020</button></div>
+        <label for="basis">2026 price reference</label><select id="basis"><option value="latest">Latest available · August 2026</option><option value="ytd">Year to date · January–August average</option></select>
+        <p class="hint">A complete 2026 annual average is not available yet.</p>
+        <div id="historical-note" class="historical-note"></div>
+        <div id="currency-control" hidden><label for="unit">Historical currency</label><select id="unit"><option value="aud">Dollar equivalent (AUD)</option><option value="pounds">Australian pounds (£)</option></select><p class="hint">£1 = A$2 at decimalisation. Pound amounts may include decimal fractions.</p></div>
+        <button type="button" id="reset-comparison" class="reset">Reset comparison</button>
+      </form>
+      <div class="results-column">
+        <section class="result-card" aria-label="Conversion result"><div class="result-top"><span class="eyebrow">EQUIVALENT PURCHASING POWER</span><span class="result-badge" id="result-period">AUGUST 2026</span></div>
+          <div id="result" role="status" aria-live="polite" aria-atomic="true"><p id="result-context"></p><strong class="result-value" id="result-value"></strong><p id="result-explanation"></p></div>
+          <div class="result-actions"><button id="swap" type="button"><span aria-hidden="true">⇄</span> Reverse direction</button><button id="copy" type="button">Copy result</button></div>
+          <div class="metrics"><div><span>Price multiplier</span><strong id="multiplier"></strong><small id="multiplier-note"></small></div><div><span>Price change</span><strong id="price-change"></strong><small id="price-note"></small></div><div><span>Comparison span</span><strong id="span"></strong><small>Years to 2026</small></div></div>
+        </section>
+        <section class="panel chart-panel" aria-labelledby="chart-heading"><div class="panel-heading"><div><h2 id="chart-heading">The same buying power, over time</h2><p class="hint" id="chart-subtitle"></p></div><span class="legend"><i aria-hidden="true"></i> Dollar equivalent</span></div><div id="chart"></div><p class="chart-footnote" id="chart-footnote"></p></section>
+      </div>
+    </section>
+    <section id="methodology" class="method-section" aria-labelledby="method-heading"><div class="section-heading"><span class="eyebrow">THE DETAILS BEHIND THE DOLLARS</span><h2 id="method-heading">Clear sources. Consistent comparisons.</h2></div>
+      <div class="method-grid"><article class="panel"><span class="step">01 / THE CALCULATION</span><h3>A basket of goods, in another year</h3><p>Converted amount = original amount × destination price index ÷ starting price index. Results describe the cost of a comparable basket of consumer goods and services.</p><p id="calculation" class="formula"></p><p>CPI measures general consumer prices. Wages, house prices, individual products and investment returns can move differently.</p></article>
+        <article class="panel"><span class="step">02 / THE HISTORY</span><h3 id="history-heading">From 1850 to the present</h3><p id="history-description"><strong>1850–1900:</strong> Sydney retail price estimates, a local historical proxy. <strong>1901–1948:</strong> linked Australian retail price indexes. <strong>1949–2025:</strong> averages of the four quarterly all-groups CPI observations.</p><p id="history-method">Early indexes cover fewer goods and are rounded. Long comparisons are approximate. The old series is linked to the modern CPI using their complete 1949 annual averages.</p><a id="history-source">ABS Year Book Australia, Table 28.4 ↗</a><br /><a id="missing-month-source" hidden>BLS note on missing October 2025 data ↗</a></article>
+        <article class="panel"><span class="step">03 / THE CURRENT YEAR</span><h3>2026, with the period made explicit</h3><p id="current-method"></p><p>Latest month and year-to-date comparisons use different periods from historical annual averages. The snapshot is bundled for reliable offline use; it does not refresh automatically.</p><p id="release-note">Data released 30 September 2026. Checked 9 October 2026.</p><a id="monthly-source">ABS monthly CPI, Table 1 ↗</a><br /><a id="quarterly-source">ABS quarterly CPI, Table 17 ↗</a></article></div>
+      <details class="panel currency-details" id="australian-currency-details"><summary>Understanding money before 1966</summary><p>Australia introduced dollars on 14 February 1966 at a rate of two dollars to one Australian pound. Earlier dollar amounts in this app are <strong>hypothetical dollar equivalents</strong>. For an actual historical price in pounds, select “Australian pounds” above. The app converts it to dollar units before adjusting for price changes.</p><p>For years before 1901, the underlying prices refer to Sydney in colonial Australia. These results are approximate comparisons, not a national CPI measurement.</p><a id="rba-source">RBA inflation calculator and historical methodology ↗</a></details>
+      <details class="panel data-details"><summary>Explore or download the comparison data</summary><div class="table-top"><p id="table-caption"></p><button id="csv" type="button">Download CSV</button></div><div class="table-scroll" tabindex="0" role="region" aria-label="Historical price indexes and converted amounts"><table><caption class="sr-only">All historical years, price index basis and equivalent value in 2026</caption><thead><tr><th scope="col">Year</th><th scope="col">Series</th><th scope="col">Linked index</th><th scope="col" id="table-value-heading">Value in 2026 (AUD)</th></tr></thead><tbody id="data-rows"></tbody></table></div><p class="hint" id="table-index-note">Indexes share a linked reference scale. 2026 is shown using the selected partial-year price reference.</p></details>
+    </section>
+  </main>
+  <footer><span><span id="footer-studio-name">Australian Dollar Studio</span> <span aria-hidden="true">/</span> Economic security tools</span><span id="footer-source-note">Historical estimates · Official ABS data · Works offline</span></footer>
+  <p class="sr-only" id="action-status" role="status" aria-live="polite"></p>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

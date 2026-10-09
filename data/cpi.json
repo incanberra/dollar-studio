@@ -1,0 +1,945 @@
+{
+  "checkedAt": "2026-10-09",
+  "releasedAt": "2026-09-30",
+  "base": "September 2025 = 100",
+  "link": {
+    "year": 1949,
+    "historicalIndex": 128.0,
+    "quarterlyAnnualIndex": 2.7824999999999998,
+    "factor": 0.021738281249999998
+  },
+  "sources": {
+    "history": "https://www.abs.gov.au/ausstats/abs@.nsf/9e1dd9680bdd9821ca257090002029cc/09BFC87C87DC317FCA256CAE00166AB4",
+    "quarterly": "https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/aug-2026/6401017.xlsx",
+    "monthly": "https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/aug-2026/640101.xlsx",
+    "method": "https://www.rba.gov.au/calculator/"
+  },
+  "annual": [
+    {
+      "year": 1850,
+      "index": 1.15212890625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1851,
+      "index": 1.21734375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1852,
+      "index": 1.21734375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1853,
+      "index": 1.4999414062499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1854,
+      "index": 1.9347070312499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1855,
+      "index": 2.2390429687499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1856,
+      "index": 1.6955859374999998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1857,
+      "index": 1.7825390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1858,
+      "index": 1.8694921875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1859,
+      "index": 1.5868945312499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1860,
+      "index": 1.5651562499999998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1861,
+      "index": 1.5434179687499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1862,
+      "index": 1.4129882812499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1863,
+      "index": 1.2608203125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1864,
+      "index": 1.304296875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1865,
+      "index": 1.3912499999999999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1866,
+      "index": 1.304296875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1867,
+      "index": 1.0869140625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1868,
+      "index": 1.1738671875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1869,
+      "index": 0.9999609374999999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1870,
+      "index": 1.0434375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1871,
+      "index": 1.0216992187499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1872,
+      "index": 0.93474609375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1873,
+      "index": 1.0216992187499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1874,
+      "index": 1.130390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1875,
+      "index": 1.15212890625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1876,
+      "index": 1.10865234375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1877,
+      "index": 1.15212890625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1878,
+      "index": 1.10865234375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1879,
+      "index": 0.9782226562499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1880,
+      "index": 0.9782226562499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1881,
+      "index": 0.9999609374999999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1882,
+      "index": 1.21734375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1883,
+      "index": 1.19560546875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1884,
+      "index": 1.130390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1885,
+      "index": 1.15212890625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1886,
+      "index": 1.21734375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1887,
+      "index": 1.130390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1888,
+      "index": 1.130390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1889,
+      "index": 1.10865234375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1890,
+      "index": 1.10865234375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1891,
+      "index": 1.0869140625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1892,
+      "index": 1.06517578125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1893,
+      "index": 1.0434375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1894,
+      "index": 0.9130078125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1895,
+      "index": 0.9130078125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1896,
+      "index": 0.9130078125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1897,
+      "index": 0.9130078125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1898,
+      "index": 0.89126953125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1899,
+      "index": 0.9782226562499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1900,
+      "index": 0.93474609375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1901,
+      "index": 1.0216992187499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1902,
+      "index": 1.0869140625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1903,
+      "index": 1.06517578125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1904,
+      "index": 0.9999609374999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1905,
+      "index": 1.0434375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1906,
+      "index": 1.0434375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1907,
+      "index": 1.0434375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1908,
+      "index": 1.10865234375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1909,
+      "index": 1.10865234375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1910,
+      "index": 1.130390625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1911,
+      "index": 1.15212890625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1912,
+      "index": 1.28255859375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1913,
+      "index": 1.28255859375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1914,
+      "index": 1.32603515625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1915,
+      "index": 1.5216796874999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1916,
+      "index": 1.5434179687499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1917,
+      "index": 1.6303710937499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1918,
+      "index": 1.7390624999999997,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1919,
+      "index": 1.9781835937499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1920,
+      "index": 2.2390429687499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1921,
+      "index": 1.9564453124999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1922,
+      "index": 1.89123046875,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1923,
+      "index": 1.9347070312499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1924,
+      "index": 1.9129687499999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1925,
+      "index": 1.9129687499999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1926,
+      "index": 1.9564453124999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1927,
+      "index": 1.9347070312499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1928,
+      "index": 1.9347070312499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1929,
+      "index": 1.9781835937499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1930,
+      "index": 1.89123046875,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1931,
+      "index": 1.6955859374999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1932,
+      "index": 1.6086328124999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1933,
+      "index": 1.5434179687499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1934,
+      "index": 1.5868945312499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1935,
+      "index": 1.6086328124999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1936,
+      "index": 1.6303710937499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1937,
+      "index": 1.6955859374999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1938,
+      "index": 1.7390624999999997,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1939,
+      "index": 1.7825390625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1940,
+      "index": 1.84775390625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1941,
+      "index": 1.9347070312499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1942,
+      "index": 2.10861328125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1943,
+      "index": 2.1955664062499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1944,
+      "index": 2.173828125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1945,
+      "index": 2.173828125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1946,
+      "index": 2.2173046875,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1947,
+      "index": 2.3042578125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1948,
+      "index": 2.5433789062499996,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1949,
+      "index": 2.7824999999999998,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1950,
+      "index": 3.035,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1951,
+      "index": 3.6325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1952,
+      "index": 4.2625,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1953,
+      "index": 4.4475,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1954,
+      "index": 4.48,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1955,
+      "index": 4.58,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1956,
+      "index": 4.8525,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1957,
+      "index": 4.98,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1958,
+      "index": 5.0375,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1959,
+      "index": 5.13,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1960,
+      "index": 5.325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1961,
+      "index": 5.46,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1962,
+      "index": 5.45,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1963,
+      "index": 5.470000000000001,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1964,
+      "index": 5.605,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1965,
+      "index": 5.8175,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1966,
+      "index": 6.0,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1967,
+      "index": 6.195,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1968,
+      "index": 6.359999999999999,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1969,
+      "index": 6.550000000000001,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1970,
+      "index": 6.795,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1971,
+      "index": 7.2,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1972,
+      "index": 7.635,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1973,
+      "index": 8.344999999999999,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1974,
+      "index": 9.6175,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1975,
+      "index": 11.0775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1976,
+      "index": 12.5525,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1977,
+      "index": 14.102500000000001,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1978,
+      "index": 15.225,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1979,
+      "index": 16.605,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1980,
+      "index": 18.2975,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1981,
+      "index": 20.055,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1982,
+      "index": 22.305,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1983,
+      "index": 24.5475,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1984,
+      "index": 25.515,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1985,
+      "index": 27.237499999999997,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1986,
+      "index": 29.71,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1987,
+      "index": 32.23,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1988,
+      "index": 34.57,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1989,
+      "index": 37.177499999999995,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1990,
+      "index": 39.89,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1991,
+      "index": 41.1725,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1992,
+      "index": 41.5775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1993,
+      "index": 42.3325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1994,
+      "index": 43.135,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1995,
+      "index": 45.1325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1996,
+      "index": 46.3125,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1997,
+      "index": 46.43,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1998,
+      "index": 46.8275,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1999,
+      "index": 47.515,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2000,
+      "index": 49.63,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2001,
+      "index": 51.8125,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2002,
+      "index": 53.375,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2003,
+      "index": 54.8475,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2004,
+      "index": 56.1275,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2005,
+      "index": 57.625,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2006,
+      "index": 59.665,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2007,
+      "index": 61.067499999999995,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2008,
+      "index": 63.72,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2009,
+      "index": 64.8625,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2010,
+      "index": 66.725,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2011,
+      "index": 68.9775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2012,
+      "index": 70.17,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2013,
+      "index": 71.8775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2014,
+      "index": 73.66749999999999,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2015,
+      "index": 74.775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2016,
+      "index": 75.7325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2017,
+      "index": 77.2075,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2018,
+      "index": 78.6925,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2019,
+      "index": 79.94500000000001,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2020,
+      "index": 80.6275,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2021,
+      "index": 82.935,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2022,
+      "index": 88.4225,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2023,
+      "index": 93.355,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2024,
+      "index": 96.3125,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2025,
+      "index": 99.045,
+      "basis": "Annual average CPI"
+    }
+  ],
+  "reference2026": {
+    "latest": {
+      "index": 103.5,
+      "label": "August 2026",
+      "short": "Aug 2026"
+    },
+    "ytd": {
+      "index": 102.32124999999999,
+      "label": "January\u2013August 2026 average",
+      "short": "Jan\u2013Aug average"
+    },
+    "monthly": [
+      {
+        "period": "2026-01",
+        "index": 101.33
+      },
+      {
+        "period": "2026-02",
+        "index": 101.31
+      },
+      {
+        "period": "2026-03",
+        "index": 102.44
+      },
+      {
+        "period": "2026-04",
+        "index": 102.8
+      },
+      {
+        "period": "2026-05",
+        "index": 102.09
+      },
+      {
+        "period": "2026-06",
+        "index": 102.03
+      },
+      {
+        "period": "2026-07",
+        "index": 103.07
+      },
+      {
+        "period": "2026-08",
+        "index": 103.5
+      }
+    ]
+  }
+}

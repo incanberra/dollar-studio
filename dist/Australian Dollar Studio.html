@@ -1,0 +1,2447 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17595b" />
+  <meta name="description" content="Compare Australian purchasing power from 1850 to 2026 using historical ABS retail prices and CPI. Convert in either direction." />
+  <title>Australian Dollar Studio · Inflation converter</title>
+  <style>:root{--ink:#17363c;--muted:#536970;--line:#dce3e2;--teal:#17595b;--paper:#f5f6f3;--white:#fff;--amber:#855921;font-family:Arial,Helvetica,sans-serif;color:var(--ink);font-size:16px;background:var(--paper);font-synthesis:none}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0}button,input,select{font:inherit;color:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}button{cursor:pointer;border:1px solid var(--line);border-radius:7px;background:white;padding:11px 15px;min-height:44px;font-size:14px}button:hover{background:#edf4f1;border-color:#8caeaa}button:disabled{opacity:.55;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid #a56925;outline-offset:4px}a{color:var(--teal);text-underline-offset:4px;line-height:1.6}header{min-height:90px;display:flex;align-items:center;gap:42px;padding:18px max(24px,calc((100vw - 1320px)/2));border-bottom:1px solid var(--line);background:var(--white)}.brand{display:flex;gap:13px;align-items:center;text-decoration:none;color:var(--ink);flex-shrink:0}.mark{display:grid;place-items:center;width:44px;height:44px;border-radius:9px;background:var(--teal);color:#fff;font-size:28px;font-family:Georgia,serif}.brand strong{display:block;font-size:17px;letter-spacing:-.3px}.brand small{display:block;font-size:12px;color:var(--muted);margin-top:5px}nav{display:flex;gap:10px;font-size:14px}nav a{padding:10px 13px;text-decoration:none;border-radius:7px;color:var(--muted)}nav .active{background:#eaf2ef;color:var(--teal);font-weight:600}.studio-label{margin-left:auto;font-size:10px;letter-spacing:1.5px;color:var(--muted)}main{max-width:1320px;margin:auto;padding:42px 24px 60px}.intro{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:28px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.7px;color:var(--teal)}h1{font-family:Georgia,serif;font-weight:400;font-size:42px;line-height:1.2;letter-spacing:-1px;margin:13px 0}p{line-height:1.65}.intro p{color:var(--muted);margin:0;font-size:16px}.quiet-button{background:transparent;white-space:nowrap}.quiet-button span{margin-right:8px}.data-bar{display:flex;gap:10px;align-items:center;padding:13px 16px;background:#eaf0ec;border:1px solid #d6e2d9;border-radius:8px;font-size:13px;margin-bottom:26px}.data-bar a{margin-left:auto;white-space:nowrap}.dot{width:7px;height:7px;background:var(--teal);border-radius:50%;flex-shrink:0}.workspace{display:grid;grid-template-columns:340px minmax(0,1fr);gap:24px;align-items:start}.panel{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:24px}.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}h2{font-size:16px;margin:0;font-weight:600}.badge{font-size:11px;background:#eff3f2;padding:5px 9px;border-radius:5px}.controls label,.controls legend{font-size:13px;font-weight:600;display:block;margin:23px 0 9px}.direction{border:0;padding:0;margin:0}.segmented{display:grid;grid-template-columns:1fr 1fr;background:#f2f5f3;padding:4px;border:1px solid var(--line);border-radius:8px;gap:3px}.segmented label{margin:0;position:relative;cursor:pointer;text-align:center}.segmented input{position:absolute;width:1px;height:1px;opacity:0}.segmented span{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 6px;border-radius:5px;font-weight:400}.segmented input:checked+span{background:var(--teal);color:white;font-weight:600}.segmented input:focus-visible+span{outline:3px solid #a56925;outline-offset:3px}.amount-field{display:flex;align-items:center;border:1px solid #baccc7;border-radius:7px;padding-left:15px;background:white}.amount-field span{font-size:24px;color:var(--teal)}.amount-field:focus-within{outline:3px solid #a56925;outline-offset:3px}.amount-field input{min-width:0;width:100%;border:0;padding:14px 12px;font-size:28px;background:transparent;outline:none;letter-spacing:-.4px}.hint{font-size:12px;color:var(--muted);line-height:1.6;margin:9px 0 0}.error{font-size:13px;color:#9a3434;margin:8px 0}.label-row{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.minor{font-size:11px;color:var(--muted)}select{width:100%;min-height:46px;padding:10px 9px;border:1px solid #c6d4d0;background:white;border-radius:6px;font-size:14px}input[type=range]{width:100%;height:30px;accent-color:var(--teal);margin:10px 0 0;cursor:pointer}.range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.quick-years{display:flex;gap:5px;flex-wrap:wrap;margin-top:14px}.quick-years button{padding:7px 10px;font-size:12px;flex:1}.chosen{background:#eaf2ef;border-color:#7ca29b;font-weight:600}.historical-note{font-size:12px;padding:13px;background:#faf3e7;border-left:3px solid #a56925;border-radius:4px;line-height:1.7;margin-top:20px;color:#725020}.reset{border:none;padding-left:0;color:var(--muted);font-size:12px;margin-top:17px;background:transparent;text-decoration:underline;text-underline-offset:3px}.results-column{display:grid;gap:20px}.result-card{background:white;border:1px solid #b9cfca;border-top:4px solid var(--teal);border-radius:10px;padding:29px 30px 0;box-shadow:0 4px 18px #223e3608}.result-top{display:flex;justify-content:space-between;align-items:center;gap:16px}.result-top .eyebrow{font-size:10px}.result-badge{font-size:10px;letter-spacing:1px;background:#edf3ef;padding:7px 9px;border-radius:5px;white-space:nowrap}.result-card #result-context{font-size:15px;color:var(--muted);margin:28px 0 10px}.result-value{font-family:Georgia,serif;display:block;font-size:clamp(36px,4.4vw,58px);font-weight:400;line-height:1.15;color:var(--teal);letter-spacing:-1.5px;overflow-wrap:anywhere}.result-card #result-explanation{font-size:16px;margin:9px 0 25px}.result-actions{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}.result-actions button{font-size:12px}.result-actions #swap{background:#f0f5f2;border-color:#c5d7cf}.result-actions span{font-size:18px;margin-right:6px}.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);margin:0 -30px;padding:20px 30px;background:#f8faf8;border-radius:0 0 10px 10px;gap:20px}.metrics span,.metrics small{display:block;font-size:11px;color:var(--muted);line-height:1.5}.metrics strong{display:block;font-size:24px;font-weight:400;margin:7px 0}.chart-panel{padding:22px 24px 16px}.chart-panel h2{font-size:15px}.chart-panel .hint{font-size:12px;margin-top:7px}.legend{font-size:11px;color:var(--muted);white-space:nowrap}.legend i{display:inline-block;vertical-align:middle;width:18px;height:3px;background:var(--teal);margin-right:6px}#chart{margin-top:15px;min-height:150px}#chart svg{display:block;width:100%;height:auto;font-family:Arial,Helvetica,sans-serif}.chart-footnote{font-size:11px;color:var(--muted);line-height:1.7;margin:0}.method-section{margin-top:48px}.section-heading{margin-bottom:22px}.section-heading h2{font-family:Georgia,serif;font-size:28px;font-weight:400;letter-spacing:-.4px;margin:10px 0}.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.step{font-size:10px;letter-spacing:1.3px;color:var(--teal);font-weight:600}h3{font-size:18px;font-family:Georgia,serif;font-weight:400;margin:14px 0 15px;line-height:1.4}.method-grid p,.currency-details p{color:var(--muted);font-size:13px;line-height:1.8}.method-grid a,.currency-details a{font-size:12px}.method-grid .formula{padding:12px;background:#f0f5f2;border-radius:5px;color:var(--teal);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.currency-details,.data-details{margin-top:16px;padding:16px 22px}summary{cursor:pointer;font-size:14px;font-weight:600;line-height:1.5;padding:8px 0;min-height:44px}.table-top{display:flex;gap:24px;align-items:center;justify-content:space-between}.table-top p{font-size:13px;color:var(--muted);max-width:800px}.table-top button{flex-shrink:0;font-size:12px}.table-scroll{max-height:390px;overflow:auto;border:1px solid var(--line);border-radius:6px;margin:10px 0}table{border-collapse:collapse;width:100%;font-size:13px;white-space:nowrap}th{position:sticky;top:0;background:#edf3ef;text-align:left}th,td{padding:13px 16px;border-bottom:1px solid var(--line)}td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}.selected-row{background:#f0f6f3}footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding:25px max(24px,calc((100vw - 1272px)/2));color:var(--muted);font-size:11px;line-height:1.7}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:fixed;top:8px;left:8px;transform:translateY(-150%);z-index:20;padding:12px 18px;background:white;border:2px solid var(--teal);border-radius:6px}.skip-link:focus{transform:translateY(0)}[hidden]{display:none!important}
+@media(max-width:1100px){.studio-label{display:none}header{justify-content:space-between;gap:24px}.workspace{grid-template-columns:310px minmax(0,1fr);gap:18px}.result-card{padding:25px 22px 0}.metrics{margin:0 -22px;padding:18px 22px;gap:12px}.result-top{flex-wrap:wrap}.chart-panel .panel-heading{flex-wrap:wrap}.method-grid{gap:16px}.method-grid .panel{padding:20px}}
+@media(max-width:760px){header{align-items:start;flex-direction:column;gap:17px;padding:20px}.brand strong{font-size:16px}nav{gap:8px;margin-left:-10px}nav a{font-size:13px;padding:8px 10px}main{padding:30px 18px 40px}.intro{align-items:start;flex-direction:column;gap:19px}h1{font-size:35px}.intro p{font-size:15px}.data-bar{align-items:start;flex-wrap:wrap;font-size:12px;padding:12px}.data-bar>span:nth-child(2){flex:1;min-width:180px}.data-bar a{margin-left:17px}.separator{display:block;height:3px;font-size:0}.workspace{grid-template-columns:1fr;gap:20px}.controls{padding:22px}.result-value{font-size:47px}.metrics strong{font-size:22px}.method-grid{grid-template-columns:1fr}.section-heading h2{font-size:26px}.table-top{align-items:start;flex-direction:column;gap:6px}.table-top p{margin-bottom:8px}footer{flex-direction:column;gap:4px;padding:22px 18px}.result-card #result-context{margin-top:24px}.chart-panel{padding:20px 12px 15px}#chart{overflow-x:auto}#chart svg{min-width:480px}.chart-footnote{padding:0 8px}.chart-panel .panel-heading{padding:0 8px}.method-section{margin-top:36px}}
+.workspace>*{min-width:0}.results-column>.panel{min-width:0}@media(max-width:760px){.workspace{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{@page{size:A4;margin:14mm}body{background:white;font-size:12px}header{padding:0 0 16px;min-height:auto}nav,.studio-label,.intro button,.skip-link,.result-actions,.reset,.quick-years,input[type=range],.range-labels,footer,.data-details{display:none!important}main{padding:20px 0;max-width:none}.intro{margin-bottom:16px}h1{font-size:29px}.workspace{grid-template-columns:260px minmax(0,1fr);gap:14px}.panel,.result-card{break-inside:avoid;padding:16px;box-shadow:none}.result-value{font-size:35px}.metrics{margin:0 -16px -16px;padding:14px 16px}.metrics strong{font-size:20px}.controls label,.controls legend{margin-top:13px}.hint{font-size:10px}.segmented span{min-height:28px;padding:6px}.method-section{margin-top:25px}.method-grid{grid-template-columns:1fr}.method-grid .panel{break-inside:avoid}.data-bar{padding:9px}.method-grid p{font-size:12px}.method-grid a{font-size:11px}#chart svg{min-width:0}.result-card{padding-bottom:16px}.chart-footnote{font-size:10px}}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#converter">Skip to converter</a>
+  <header>
+    <a class="brand" href="#" aria-label="Australian Dollar Studio home"><span class="mark" aria-hidden="true">$</span><span><strong>Australian Dollar Studio</strong><small>Purchasing power through time</small></span></a>
+    <nav aria-label="Main navigation"><a class="active" href="#converter">Converter</a><a href="#methodology">Data &amp; methodology</a></nav>
+    <span class="studio-label">ECONOMIC SECURITY TOOLS</span>
+  </header>
+  <main>
+    <div class="intro"><div><span class="eyebrow" id="country-range">AUSTRALIA · 1850–2026</span><h1>Put a dollar in perspective.</h1><p id="intro-description">Compare the buying power of Australian money, then and now.</p></div><button id="print" class="quiet-button"><span aria-hidden="true">↗</span> Print / save PDF</button></div>
+    <div class="data-bar"><span class="dot" aria-hidden="true"></span><span><strong id="source-label">ABS historical prices &amp; CPI</strong><span class="separator"> · </span><span id="data-period">2026 data through August</span></span><a href="#methodology">About the data <span aria-hidden="true">↗</span></a></div>
+    <section class="workspace" id="converter" aria-label="Australian dollar converter">
+      <form class="panel controls" id="conversion-form" novalidate>
+        <div class="panel-heading"><h2>Your comparison</h2><span class="badge" id="currency-badge">AUD</span></div>
+        <label for="currency">Currency</label><select id="currency" aria-describedby="currency-hint"><option value="AUD">Australian dollars (AUD)</option><option value="USD">US dollars (USD)</option></select><p class="hint" id="currency-hint">Compare purchasing power within the selected currency.</p>
+        <fieldset class="direction"><legend>Conversion direction</legend><div class="segmented"><label><input type="radio" name="direction" value="forward" checked /><span>Past → 2026</span></label><label><input type="radio" name="direction" value="reverse" /><span>2026 → past</span></label></div></fieldset>
+        <label for="amount" id="amount-label">Amount in the historical year</label>
+        <div class="amount-field"><span id="currency-symbol" aria-hidden="true">$</span><input id="amount" type="text" inputmode="decimal" value="100" aria-describedby="amount-hint amount-error" autocomplete="off" /></div>
+        <p class="hint" id="amount-hint">Australian dollars. Commas are welcome.</p><p class="error" id="amount-error" hidden></p>
+        <div class="label-row"><label for="year">Historical year</label><span id="period-kind" class="minor">Annual average</span></div>
+        <select id="year" aria-describedby="historical-note"></select>
+        <label class="sr-only" for="year-range">Adjust historical year</label><input id="year-range" type="range" min="1850" max="2026" value="2000" />
+        <div class="range-labels" aria-hidden="true"><span id="earliest-year">1850</span><span>2026</span></div>
+        <div class="quick-years" role="group" aria-label="Choose a historical year"><button type="button" data-year="1850">1850</button><button type="button" data-year="1901">1901</button><button type="button" data-year="1966">1966</button><button type="button" data-year="2000">2000</button><button type="button" data-year="2020">2020</button></div>
+        <label for="basis">2026 price reference</label><select id="basis"><option value="latest">Latest available · August 2026</option><option value="ytd">Year to date · January–August average</option></select>
+        <p class="hint">A complete 2026 annual average is not available yet.</p>
+        <div id="historical-note" class="historical-note"></div>
+        <div id="currency-control" hidden><label for="unit">Historical currency</label><select id="unit"><option value="aud">Dollar equivalent (AUD)</option><option value="pounds">Australian pounds (£)</option></select><p class="hint">£1 = A$2 at decimalisation. Pound amounts may include decimal fractions.</p></div>
+        <button type="button" id="reset-comparison" class="reset">Reset comparison</button>
+      </form>
+      <div class="results-column">
+        <section class="result-card" aria-label="Conversion result"><div class="result-top"><span class="eyebrow">EQUIVALENT PURCHASING POWER</span><span class="result-badge" id="result-period">AUGUST 2026</span></div>
+          <div id="result" role="status" aria-live="polite" aria-atomic="true"><p id="result-context"></p><strong class="result-value" id="result-value"></strong><p id="result-explanation"></p></div>
+          <div class="result-actions"><button id="swap" type="button"><span aria-hidden="true">⇄</span> Reverse direction</button><button id="copy" type="button">Copy result</button></div>
+          <div class="metrics"><div><span>Price multiplier</span><strong id="multiplier"></strong><small id="multiplier-note"></small></div><div><span>Price change</span><strong id="price-change"></strong><small id="price-note"></small></div><div><span>Comparison span</span><strong id="span"></strong><small>Years to 2026</small></div></div>
+        </section>
+        <section class="panel chart-panel" aria-labelledby="chart-heading"><div class="panel-heading"><div><h2 id="chart-heading">The same buying power, over time</h2><p class="hint" id="chart-subtitle"></p></div><span class="legend"><i aria-hidden="true"></i> Dollar equivalent</span></div><div id="chart"></div><p class="chart-footnote" id="chart-footnote"></p></section>
+      </div>
+    </section>
+    <section id="methodology" class="method-section" aria-labelledby="method-heading"><div class="section-heading"><span class="eyebrow">THE DETAILS BEHIND THE DOLLARS</span><h2 id="method-heading">Clear sources. Consistent comparisons.</h2></div>
+      <div class="method-grid"><article class="panel"><span class="step">01 / THE CALCULATION</span><h3>A basket of goods, in another year</h3><p>Converted amount = original amount × destination price index ÷ starting price index. Results describe the cost of a comparable basket of consumer goods and services.</p><p id="calculation" class="formula"></p><p>CPI measures general consumer prices. Wages, house prices, individual products and investment returns can move differently.</p></article>
+        <article class="panel"><span class="step">02 / THE HISTORY</span><h3 id="history-heading">From 1850 to the present</h3><p id="history-description"><strong>1850–1900:</strong> Sydney retail price estimates, a local historical proxy. <strong>1901–1948:</strong> linked Australian retail price indexes. <strong>1949–2025:</strong> averages of the four quarterly all-groups CPI observations.</p><p id="history-method">Early indexes cover fewer goods and are rounded. Long comparisons are approximate. The old series is linked to the modern CPI using their complete 1949 annual averages.</p><a id="history-source">ABS Year Book Australia, Table 28.4 ↗</a><br /><a id="missing-month-source" hidden>BLS note on missing October 2025 data ↗</a></article>
+        <article class="panel"><span class="step">03 / THE CURRENT YEAR</span><h3>2026, with the period made explicit</h3><p id="current-method"></p><p>Latest month and year-to-date comparisons use different periods from historical annual averages. The snapshot is bundled for reliable offline use; it does not refresh automatically.</p><p id="release-note">Data released 30 September 2026. Checked 9 October 2026.</p><a id="monthly-source">ABS monthly CPI, Table 1 ↗</a><br /><a id="quarterly-source">ABS quarterly CPI, Table 17 ↗</a></article></div>
+      <details class="panel currency-details" id="australian-currency-details"><summary>Understanding money before 1966</summary><p>Australia introduced dollars on 14 February 1966 at a rate of two dollars to one Australian pound. Earlier dollar amounts in this app are <strong>hypothetical dollar equivalents</strong>. For an actual historical price in pounds, select “Australian pounds” above. The app converts it to dollar units before adjusting for price changes.</p><p>For years before 1901, the underlying prices refer to Sydney in colonial Australia. These results are approximate comparisons, not a national CPI measurement.</p><a id="rba-source">RBA inflation calculator and historical methodology ↗</a></details>
+      <details class="panel data-details"><summary>Explore or download the comparison data</summary><div class="table-top"><p id="table-caption"></p><button id="csv" type="button">Download CSV</button></div><div class="table-scroll" tabindex="0" role="region" aria-label="Historical price indexes and converted amounts"><table><caption class="sr-only">All historical years, price index basis and equivalent value in 2026</caption><thead><tr><th scope="col">Year</th><th scope="col">Series</th><th scope="col">Linked index</th><th scope="col" id="table-value-heading">Value in 2026 (AUD)</th></tr></thead><tbody id="data-rows"></tbody></table></div><p class="hint" id="table-index-note">Indexes share a linked reference scale. 2026 is shown using the selected partial-year price reference.</p></details>
+    </section>
+  </main>
+  <footer><span><span id="footer-studio-name">Australian Dollar Studio</span> <span aria-hidden="true">/</span> Economic security tools</span><span id="footer-source-note">Historical estimates · Official ABS data · Works offline</span></footer>
+  <p class="sr-only" id="action-status" role="status" aria-live="polite"></p>
+  <script>const australianData = {
+  "checkedAt": "2026-10-09",
+  "releasedAt": "2026-09-30",
+  "base": "September 2025 = 100",
+  "link": {
+    "year": 1949,
+    "historicalIndex": 128.0,
+    "quarterlyAnnualIndex": 2.7824999999999998,
+    "factor": 0.021738281249999998
+  },
+  "sources": {
+    "history": "https://www.abs.gov.au/ausstats/abs@.nsf/9e1dd9680bdd9821ca257090002029cc/09BFC87C87DC317FCA256CAE00166AB4",
+    "quarterly": "https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/aug-2026/6401017.xlsx",
+    "monthly": "https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/aug-2026/640101.xlsx",
+    "method": "https://www.rba.gov.au/calculator/"
+  },
+  "annual": [
+    {
+      "year": 1850,
+      "index": 1.15212890625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1851,
+      "index": 1.21734375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1852,
+      "index": 1.21734375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1853,
+      "index": 1.4999414062499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1854,
+      "index": 1.9347070312499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1855,
+      "index": 2.2390429687499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1856,
+      "index": 1.6955859374999998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1857,
+      "index": 1.7825390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1858,
+      "index": 1.8694921875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1859,
+      "index": 1.5868945312499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1860,
+      "index": 1.5651562499999998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1861,
+      "index": 1.5434179687499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1862,
+      "index": 1.4129882812499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1863,
+      "index": 1.2608203125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1864,
+      "index": 1.304296875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1865,
+      "index": 1.3912499999999999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1866,
+      "index": 1.304296875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1867,
+      "index": 1.0869140625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1868,
+      "index": 1.1738671875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1869,
+      "index": 0.9999609374999999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1870,
+      "index": 1.0434375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1871,
+      "index": 1.0216992187499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1872,
+      "index": 0.93474609375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1873,
+      "index": 1.0216992187499998,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1874,
+      "index": 1.130390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1875,
+      "index": 1.15212890625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1876,
+      "index": 1.10865234375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1877,
+      "index": 1.15212890625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1878,
+      "index": 1.10865234375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1879,
+      "index": 0.9782226562499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1880,
+      "index": 0.9782226562499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1881,
+      "index": 0.9999609374999999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1882,
+      "index": 1.21734375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1883,
+      "index": 1.19560546875,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1884,
+      "index": 1.130390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1885,
+      "index": 1.15212890625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1886,
+      "index": 1.21734375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1887,
+      "index": 1.130390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1888,
+      "index": 1.130390625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1889,
+      "index": 1.10865234375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1890,
+      "index": 1.10865234375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1891,
+      "index": 1.0869140625,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1892,
+      "index": 1.06517578125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1893,
+      "index": 1.0434375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1894,
+      "index": 0.9130078125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1895,
+      "index": 0.9130078125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1896,
+      "index": 0.9130078125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1897,
+      "index": 0.9130078125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1898,
+      "index": 0.89126953125,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1899,
+      "index": 0.9782226562499999,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1900,
+      "index": 0.93474609375,
+      "basis": "Sydney retail prices"
+    },
+    {
+      "year": 1901,
+      "index": 1.0216992187499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1902,
+      "index": 1.0869140625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1903,
+      "index": 1.06517578125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1904,
+      "index": 0.9999609374999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1905,
+      "index": 1.0434375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1906,
+      "index": 1.0434375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1907,
+      "index": 1.0434375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1908,
+      "index": 1.10865234375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1909,
+      "index": 1.10865234375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1910,
+      "index": 1.130390625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1911,
+      "index": 1.15212890625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1912,
+      "index": 1.28255859375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1913,
+      "index": 1.28255859375,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1914,
+      "index": 1.32603515625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1915,
+      "index": 1.5216796874999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1916,
+      "index": 1.5434179687499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1917,
+      "index": 1.6303710937499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1918,
+      "index": 1.7390624999999997,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1919,
+      "index": 1.9781835937499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1920,
+      "index": 2.2390429687499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1921,
+      "index": 1.9564453124999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1922,
+      "index": 1.89123046875,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1923,
+      "index": 1.9347070312499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1924,
+      "index": 1.9129687499999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1925,
+      "index": 1.9129687499999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1926,
+      "index": 1.9564453124999999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1927,
+      "index": 1.9347070312499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1928,
+      "index": 1.9347070312499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1929,
+      "index": 1.9781835937499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1930,
+      "index": 1.89123046875,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1931,
+      "index": 1.6955859374999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1932,
+      "index": 1.6086328124999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1933,
+      "index": 1.5434179687499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1934,
+      "index": 1.5868945312499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1935,
+      "index": 1.6086328124999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1936,
+      "index": 1.6303710937499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1937,
+      "index": 1.6955859374999998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1938,
+      "index": 1.7390624999999997,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1939,
+      "index": 1.7825390625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1940,
+      "index": 1.84775390625,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1941,
+      "index": 1.9347070312499999,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1942,
+      "index": 2.10861328125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1943,
+      "index": 2.1955664062499998,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1944,
+      "index": 2.173828125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1945,
+      "index": 2.173828125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1946,
+      "index": 2.2173046875,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1947,
+      "index": 2.3042578125,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1948,
+      "index": 2.5433789062499996,
+      "basis": "Linked retail price index"
+    },
+    {
+      "year": 1949,
+      "index": 2.7824999999999998,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1950,
+      "index": 3.035,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1951,
+      "index": 3.6325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1952,
+      "index": 4.2625,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1953,
+      "index": 4.4475,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1954,
+      "index": 4.48,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1955,
+      "index": 4.58,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1956,
+      "index": 4.8525,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1957,
+      "index": 4.98,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1958,
+      "index": 5.0375,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1959,
+      "index": 5.13,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1960,
+      "index": 5.325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1961,
+      "index": 5.46,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1962,
+      "index": 5.45,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1963,
+      "index": 5.470000000000001,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1964,
+      "index": 5.605,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1965,
+      "index": 5.8175,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1966,
+      "index": 6.0,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1967,
+      "index": 6.195,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1968,
+      "index": 6.359999999999999,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1969,
+      "index": 6.550000000000001,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1970,
+      "index": 6.795,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1971,
+      "index": 7.2,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1972,
+      "index": 7.635,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1973,
+      "index": 8.344999999999999,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1974,
+      "index": 9.6175,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1975,
+      "index": 11.0775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1976,
+      "index": 12.5525,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1977,
+      "index": 14.102500000000001,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1978,
+      "index": 15.225,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1979,
+      "index": 16.605,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1980,
+      "index": 18.2975,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1981,
+      "index": 20.055,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1982,
+      "index": 22.305,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1983,
+      "index": 24.5475,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1984,
+      "index": 25.515,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1985,
+      "index": 27.237499999999997,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1986,
+      "index": 29.71,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1987,
+      "index": 32.23,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1988,
+      "index": 34.57,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1989,
+      "index": 37.177499999999995,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1990,
+      "index": 39.89,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1991,
+      "index": 41.1725,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1992,
+      "index": 41.5775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1993,
+      "index": 42.3325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1994,
+      "index": 43.135,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1995,
+      "index": 45.1325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1996,
+      "index": 46.3125,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1997,
+      "index": 46.43,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1998,
+      "index": 46.8275,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 1999,
+      "index": 47.515,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2000,
+      "index": 49.63,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2001,
+      "index": 51.8125,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2002,
+      "index": 53.375,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2003,
+      "index": 54.8475,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2004,
+      "index": 56.1275,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2005,
+      "index": 57.625,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2006,
+      "index": 59.665,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2007,
+      "index": 61.067499999999995,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2008,
+      "index": 63.72,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2009,
+      "index": 64.8625,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2010,
+      "index": 66.725,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2011,
+      "index": 68.9775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2012,
+      "index": 70.17,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2013,
+      "index": 71.8775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2014,
+      "index": 73.66749999999999,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2015,
+      "index": 74.775,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2016,
+      "index": 75.7325,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2017,
+      "index": 77.2075,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2018,
+      "index": 78.6925,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2019,
+      "index": 79.94500000000001,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2020,
+      "index": 80.6275,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2021,
+      "index": 82.935,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2022,
+      "index": 88.4225,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2023,
+      "index": 93.355,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2024,
+      "index": 96.3125,
+      "basis": "Annual average CPI"
+    },
+    {
+      "year": 2025,
+      "index": 99.045,
+      "basis": "Annual average CPI"
+    }
+  ],
+  "reference2026": {
+    "latest": {
+      "index": 103.5,
+      "label": "August 2026",
+      "short": "Aug 2026"
+    },
+    "ytd": {
+      "index": 102.32124999999999,
+      "label": "January\u2013August 2026 average",
+      "short": "Jan\u2013Aug average"
+    },
+    "monthly": [
+      {
+        "period": "2026-01",
+        "index": 101.33
+      },
+      {
+        "period": "2026-02",
+        "index": 101.31
+      },
+      {
+        "period": "2026-03",
+        "index": 102.44
+      },
+      {
+        "period": "2026-04",
+        "index": 102.8
+      },
+      {
+        "period": "2026-05",
+        "index": 102.09
+      },
+      {
+        "period": "2026-06",
+        "index": 102.03
+      },
+      {
+        "period": "2026-07",
+        "index": 103.07
+      },
+      {
+        "period": "2026-08",
+        "index": 103.5
+      }
+    ]
+  }
+}
+;
+const usData = {
+  "checkedAt": "2026-10-10",
+  "releasedAt": "2026-09-11",
+  "base": "1982\u20131984 = 100",
+  "link": {
+    "year": 1913,
+    "historicalIndex": 29.7,
+    "monthlyAnnualIndex": 9.883333333333335,
+    "factor": 0.3327721661054995
+  },
+  "seriesId": "CUUR0000SA0",
+  "missingPeriods": [
+    "2025-10"
+  ],
+  "sources": {
+    "history": "https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1800-",
+    "monthly": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
+    "annual": "https://api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SA0",
+    "method": "https://www.bls.gov/cpi/overview.htm",
+    "missingMonth": "https://www.bls.gov/cpi/additional-resources/2025-federal-government-shutdown-impact-cpi-faq.htm"
+  },
+  "annual": [
+    {
+      "year": 1800,
+      "index": 16.971380471380474,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1801,
+      "index": 16.638608305274975,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1802,
+      "index": 14.309203142536477,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1803,
+      "index": 14.974747474747476,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1804,
+      "index": 14.974747474747476,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1805,
+      "index": 14.974747474747476,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1806,
+      "index": 15.640291806958475,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1807,
+      "index": 14.641975308641976,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1808,
+      "index": 15.973063973063976,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1809,
+      "index": 15.640291806958475,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1810,
+      "index": 15.640291806958475,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1811,
+      "index": 16.638608305274975,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1812,
+      "index": 16.971380471380474,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1813,
+      "index": 19.30078563411897,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1814,
+      "index": 20.964646464646467,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1815,
+      "index": 18.302469135802472,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1816,
+      "index": 16.971380471380474,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1817,
+      "index": 15.973063973063976,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1818,
+      "index": 15.307519640852975,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1819,
+      "index": 15.307519640852975,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1820,
+      "index": 13.976430976430978,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1821,
+      "index": 13.310886644219979,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1822,
+      "index": 13.310886644219979,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1823,
+      "index": 11.979797979797981,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1824,
+      "index": 10.981481481481483,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1825,
+      "index": 11.314253647586982,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1826,
+      "index": 11.314253647586982,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1827,
+      "index": 11.314253647586982,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1828,
+      "index": 10.981481481481483,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1829,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1830,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1831,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1832,
+      "index": 9.983164983164984,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1833,
+      "index": 9.650392817059485,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1834,
+      "index": 9.983164983164984,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1835,
+      "index": 10.315937149270484,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1836,
+      "index": 10.981481481481483,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1837,
+      "index": 11.314253647586982,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1838,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1839,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1840,
+      "index": 9.983164983164984,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1841,
+      "index": 10.315937149270484,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1842,
+      "index": 9.650392817059485,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1843,
+      "index": 9.317620650953986,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1844,
+      "index": 9.317620650953986,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1845,
+      "index": 9.317620650953986,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1846,
+      "index": 8.984848484848486,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1847,
+      "index": 9.317620650953986,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1848,
+      "index": 8.652076318742987,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1849,
+      "index": 8.319304152637487,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1850,
+      "index": 8.319304152637487,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1851,
+      "index": 8.319304152637487,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1852,
+      "index": 8.319304152637487,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1853,
+      "index": 8.319304152637487,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1854,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1855,
+      "index": 9.317620650953986,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1856,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1857,
+      "index": 9.317620650953986,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1858,
+      "index": 8.652076318742987,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1859,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1860,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1861,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1862,
+      "index": 9.983164983164984,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1863,
+      "index": 12.31257014590348,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1864,
+      "index": 15.640291806958475,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1865,
+      "index": 15.307519640852975,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1866,
+      "index": 14.641975308641976,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1867,
+      "index": 13.976430976430978,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1868,
+      "index": 13.310886644219979,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1869,
+      "index": 13.310886644219979,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1870,
+      "index": 12.64534231200898,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1871,
+      "index": 11.979797979797981,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1872,
+      "index": 11.979797979797981,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1873,
+      "index": 11.979797979797981,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1874,
+      "index": 11.314253647586982,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1875,
+      "index": 10.981481481481483,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1876,
+      "index": 10.648709315375983,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1877,
+      "index": 10.648709315375983,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1878,
+      "index": 9.650392817059485,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1879,
+      "index": 9.317620650953986,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1880,
+      "index": 9.650392817059485,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1881,
+      "index": 9.650392817059485,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1882,
+      "index": 9.650392817059485,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1883,
+      "index": 9.317620650953986,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1884,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1885,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1886,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1887,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1888,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1889,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1890,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1891,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1892,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1893,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1894,
+      "index": 8.652076318742987,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1895,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1896,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1897,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1898,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1899,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1900,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1901,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1902,
+      "index": 8.652076318742987,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1903,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1904,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1905,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1906,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1907,
+      "index": 9.317620650953986,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1908,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1909,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1910,
+      "index": 9.317620650953986,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1911,
+      "index": 9.317620650953986,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1912,
+      "index": 9.650392817059485,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1913,
+      "index": 9.883333333333335,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1914,
+      "index": 10.016666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1915,
+      "index": 10.108333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1916,
+      "index": 10.883333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1917,
+      "index": 12.825000000000001,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1918,
+      "index": 15.041666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1919,
+      "index": 17.333333333333332,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1920,
+      "index": 20.041666666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1921,
+      "index": 17.849999999999998,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1922,
+      "index": 16.75,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1923,
+      "index": 17.05,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1924,
+      "index": 17.125,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1925,
+      "index": 17.541666666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1926,
+      "index": 17.7,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1927,
+      "index": 17.358333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1928,
+      "index": 17.158333333333335,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1929,
+      "index": 17.158333333333335,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1930,
+      "index": 16.7,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1931,
+      "index": 15.208333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1932,
+      "index": 13.641666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1933,
+      "index": 12.933333333333332,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1934,
+      "index": 13.383333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1935,
+      "index": 13.725,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1936,
+      "index": 13.866666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1937,
+      "index": 14.383333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1938,
+      "index": 14.091666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1939,
+      "index": 13.908333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1940,
+      "index": 14.008333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1941,
+      "index": 14.725,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1942,
+      "index": 16.333333333333332,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1943,
+      "index": 17.308333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1944,
+      "index": 17.591666666666665,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1945,
+      "index": 17.991666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1946,
+      "index": 19.516666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1947,
+      "index": 22.325,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1948,
+      "index": 24.041666666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1949,
+      "index": 23.808333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1950,
+      "index": 24.066666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1951,
+      "index": 25.958333333333332,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1952,
+      "index": 26.55,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1953,
+      "index": 26.766666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1954,
+      "index": 26.849999999999998,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1955,
+      "index": 26.775000000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1956,
+      "index": 27.183333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1957,
+      "index": 28.09166666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1958,
+      "index": 28.858333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1959,
+      "index": 29.150000000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1960,
+      "index": 29.575,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1961,
+      "index": 29.891666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1962,
+      "index": 30.25,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1963,
+      "index": 30.625,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1964,
+      "index": 31.016666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1965,
+      "index": 31.508333333333336,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1966,
+      "index": 32.458333333333336,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1967,
+      "index": 33.358333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1968,
+      "index": 34.78333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1969,
+      "index": 36.68333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1970,
+      "index": 38.824999999999996,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1971,
+      "index": 40.49166666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1972,
+      "index": 41.81666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1973,
+      "index": 44.4,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1974,
+      "index": 49.30833333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1975,
+      "index": 53.81666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1976,
+      "index": 56.90833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1977,
+      "index": 60.60833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1978,
+      "index": 65.23333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1979,
+      "index": 72.575,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1980,
+      "index": 82.40833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1981,
+      "index": 90.925,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1982,
+      "index": 96.5,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1983,
+      "index": 99.60000000000001,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1984,
+      "index": 103.88333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1985,
+      "index": 107.56666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1986,
+      "index": 109.60833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1987,
+      "index": 113.625,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1988,
+      "index": 118.25833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1989,
+      "index": 123.96666666666665,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1990,
+      "index": 130.65833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1991,
+      "index": 136.19166666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1992,
+      "index": 140.31666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1993,
+      "index": 144.45833333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1994,
+      "index": 148.225,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1995,
+      "index": 152.38333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1996,
+      "index": 156.85,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1997,
+      "index": 160.51666666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1998,
+      "index": 163.00833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1999,
+      "index": 166.57500000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2000,
+      "index": 172.20000000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2001,
+      "index": 177.0666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2002,
+      "index": 179.875,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2003,
+      "index": 183.95833333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2004,
+      "index": 188.88333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2005,
+      "index": 195.29166666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2006,
+      "index": 201.59166666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2007,
+      "index": 207.34241666666665,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2008,
+      "index": 215.3025,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2009,
+      "index": 214.537,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2010,
+      "index": 218.05550000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2011,
+      "index": 224.93916666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2012,
+      "index": 229.59391666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2013,
+      "index": 232.95708333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2014,
+      "index": 236.73616666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2015,
+      "index": 237.01700000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2016,
+      "index": 240.00716666666665,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2017,
+      "index": 245.11958333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2018,
+      "index": 251.10683333333336,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2019,
+      "index": 255.65741666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2020,
+      "index": 258.8111666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2021,
+      "index": 270.96975000000003,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2022,
+      "index": 292.6549166666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2023,
+      "index": 304.7015833333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2024,
+      "index": 313.6888333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2025,
+      "index": 321.943,
+      "basis": "Annual average CPI-U (11 published months)"
+    }
+  ],
+  "reference2026": {
+    "latest": {
+      "index": 334.98,
+      "label": "August 2026",
+      "short": "Aug 2026"
+    },
+    "ytd": {
+      "index": 331.655375,
+      "label": "January\u2013August 2026 average",
+      "short": "Jan\u2013Aug average"
+    },
+    "monthly": [
+      {
+        "period": "2026-01",
+        "index": 325.252
+      },
+      {
+        "period": "2026-02",
+        "index": 326.785
+      },
+      {
+        "period": "2026-03",
+        "index": 330.213
+      },
+      {
+        "period": "2026-04",
+        "index": 333.02
+      },
+      {
+        "period": "2026-05",
+        "index": 335.123
+      },
+      {
+        "period": "2026-06",
+        "index": 333.952
+      },
+      {
+        "period": "2026-07",
+        "index": 333.918
+      },
+      {
+        "period": "2026-08",
+        "index": 334.98
+      }
+    ]
+  }
+}
+;
+function parseAmount(raw) {
+  const value = String(raw).trim();
+  if (!/^(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d{0,2})?$/.test(value)) return null;
+  const amount = Number(value.replaceAll(',', ''));
+  return Number.isFinite(amount) && amount >= 0 && amount <= 1e12 ? amount : null;
+}
+
+function convert(amount, fromIndex, toIndex) {
+  if (![amount, fromIndex, toIndex].every(Number.isFinite) || amount < 0 || fromIndex <= 0 || toIndex <= 0) throw new RangeError('Invalid amount or price index.');
+  return amount * toIndex / fromIndex;
+}
+
+const money = (value, currency = 'AUD') => new Intl.NumberFormat('en-AU', { style: 'currency', currency, maximumFractionDigits: 2 }).format(value);
+const number = (value, digits = 2) => new Intl.NumberFormat('en-AU', { maximumFractionDigits: digits, minimumFractionDigits: digits }).format(value);
+
+
+const $ = id => document.getElementById(id);
+let currency = 'AUD';
+let data = australianData;
+let years = new Map(data.annual.map(row => [row.year, row]));
+const currencyMoney = value => money(value, currency);
+const isUS = () => currency === 'USD';
+const australianText = Object.fromEntries(['history-description', 'history-method'].map(id => [id, $(id).innerHTML]));
+let direction = 'forward';
+let state;
+let copyTimer;
+function configureCurrency() {
+  const previousYear = Number($('year').value) || 2000;
+  currency = $('currency').value;
+  data = isUS() ? usData : australianData;
+  years = new Map(data.annual.map(row => [row.year, row]));
+  const earliest = data.annual[0].year;
+  $('year').replaceChildren();
+  for (let year = 2026; year >= earliest; year--) {
+    const option = document.createElement('option');
+    option.value = year;
+    option.textContent = `${year}${year === 2026 ? ' · partial year' : isUS() && year < 1913 ? ' · historical estimate' : !isUS() && year < 1901 ? ' · Sydney estimate' : isUS() && year === 2025 ? ' · 11-month average' : ''}`;
+    $('year').append(option);
+  }
+  $('year').value = String(Math.max(earliest, previousYear));
+  $('year-range').min = earliest;
+  $('earliest-year').textContent = earliest;
+  const quickYears = isUS() ? [1800, 1913, 1978, 2000, 2020] : [1850, 1901, 1966, 2000, 2020];
+  document.querySelectorAll('[data-year]').forEach((button, i) => { button.dataset.year = quickYears[i]; button.textContent = quickYears[i]; });
+  $('currency-badge').textContent = currency;
+  $('country-range').textContent = `${isUS() ? 'UNITED STATES' : 'AUSTRALIA'} · ${earliest}–2026`;
+  $('intro-description').textContent = `Compare the buying power of ${isUS() ? 'US' : 'Australian'} money, then and now.`;
+  $('source-label').textContent = isUS() ? 'BLS CPI-U & Federal Reserve historical prices' : 'ABS historical prices & CPI';
+  $('data-period').textContent = '2026 data through August';
+  $('converter').setAttribute('aria-label', `${isUS() ? 'US' : 'Australian'} dollar converter`);
+  const studioName = `${isUS() ? 'US' : 'Australian'} Dollar Studio`;
+  document.querySelector('.brand strong').textContent = studioName;
+  document.querySelector('.brand').setAttribute('aria-label', `${studioName} home`);
+  document.title = `${studioName} · Inflation converter`;
+  $('footer-studio-name').textContent = studioName;
+  $('footer-source-note').textContent = `Historical estimates · Official ${isUS() ? 'BLS' : 'ABS'} data · Works offline`;
+  $('history-heading').textContent = `From ${earliest} to the present`;
+  $('history-description').innerHTML = isUS() ? '<strong>1800–1912:</strong> historical estimates compiled by the Minneapolis Fed, including Vermont family-living prices, Hoover’s price series and Rees’s cost-of-living series. <strong>1913–2025:</strong> annual averages of published monthly all-items, US city average CPI-U indexes (not seasonally adjusted).' : australianText['history-description'];
+  $('history-method').innerHTML = isUS() ? 'Early indexes cover different populations and are rounded, so long comparisons are approximate. The historical series is linked to the modern index at 1913. The 2025 average uses the 11 published months; October data were unavailable.' : australianText['history-method'];
+  $('release-note').textContent = `Data released ${new Date(data.releasedAt + 'T00:00:00Z').toLocaleDateString('en-AU', {day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}. Checked ${new Date(data.checkedAt + 'T00:00:00Z').toLocaleDateString('en-AU', {day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}.`;
+  $('history-source').textContent = isUS() ? 'Minneapolis Fed historical prices, 1800 onward ↗' : 'ABS Year Book Australia, Table 28.4 ↗';
+  $('monthly-source').textContent = isUS() ? 'BLS August 2026 CPI release ↗' : 'ABS monthly CPI, Table 1 ↗';
+  $('quarterly-source').textContent = isUS() ? 'BLS public CPI-U series, CUUR0000SA0 ↗' : 'ABS quarterly CPI, Table 17 ↗';
+  $('australian-currency-details').hidden = isUS();
+  $('missing-month-source').hidden = !isUS();
+  for (const [id, source] of [['history-source', data.sources.history], ['monthly-source', data.sources.monthly], ['quarterly-source', isUS() ? data.sources.annual : data.sources.quarterly], ['rba-source', australianData.sources.method], ['missing-month-source', usData.sources.missingMonth]]) {
+    $(id).href = source;
+    $(id).target = '_blank';
+    $(id).rel = 'noopener';
+  }
+  $('table-value-heading').textContent = `Value in 2026 (${currency})`;
+  $('table-index-note').textContent = `Indexes share a linked reference scale (${data.base}). 2026 uses the selected partial-year price reference.`;
+}
+
+function update() {
+  const year = Number($('year').value);
+  const ref = data.reference2026[$('basis').value];
+  const historical = year === 2026 ? { year, index: ref.index, basis: ref.label } : years.get(year);
+  const pounds = !isUS() && year < 1966 && $('unit').value === 'pounds';
+  const amount = parseAmount($('amount').value);
+  const valid = amount !== null;
+  $('amount').setAttribute('aria-invalid', String(!valid));
+  $('amount-error').hidden = valid;
+  $('amount-error').textContent = valid ? '' : 'Enter an amount from 0 to 1 trillion, with up to two decimal places (for example, 1,250.50).';
+  $('amount-label').textContent = direction === 'forward' ? `Amount in ${year}` : 'Amount in 2026';
+  $('currency-symbol').textContent = direction === 'forward' && pounds ? '£' : '$';
+  $('amount-hint').textContent = isUS() ? 'US dollars. Commas are welcome.' : direction === 'forward' && pounds ? 'Australian pounds, in decimal form. £1 = A$2.' : year < 1966 && direction === 'forward' ? 'Hypothetical AUD equivalent. You can enter pounds below.' : 'Australian dollars. Commas are welcome.';
+  $('currency-control').hidden = isUS() || year >= 1966;
+  $('period-kind').textContent = year === 2026 ? 'Partial year' : isUS() && year === 2025 ? '11-month average' : year < (isUS() ? 1913 : 1949) ? 'Historical series' : 'Annual average';
+  $('year-range').value = year;
+  $('historical-note').hidden = isUS() ? year >= 1913 && year !== 2025 && year !== 2026 : year >= 1966 && year !== 2026;
+  $('historical-note').textContent = isUS() ? year < 1913 ? `Before 1913, US prices are historical estimates. ${historical.basis}; coverage differs from modern CPI-U.` : year === 2025 ? 'The US 2025 average uses 11 published months. BLS did not publish October CPI because of the federal funding lapse.' : year === 2026 ? 'Both sides use the same 2026 price reference, so the amount is unchanged.' : '' : year < 1901 ? '1850–1900 uses Sydney retail prices as a historical estimate. Dollars are hypothetical equivalents; Australian pounds were used at the time.' : year < 1966 ? 'Dollars before 1966 are hypothetical equivalents. For an actual price in Australian pounds, change the currency below.' : year === 2026 ? 'Both sides use the same 2026 price reference, so the amount is unchanged.' : '';
+  document.querySelectorAll('[data-year]').forEach(button => button.classList.toggle('chosen', Number(button.dataset.year) === year));
+  const fromIndex = direction === 'forward' ? historical.index : ref.index;
+  const toIndex = direction === 'forward' ? ref.index : historical.index;
+  const unitFactor = pounds ? 2 : 1;
+  const value = valid ? direction === 'forward' ? convert(amount * unitFactor, fromIndex, toIndex) : convert(amount, fromIndex, toIndex) / unitFactor : null;
+  const historicalMoney = n => pounds ? `£${number(n)}` : currencyMoney(n);
+  const fromLabel = direction === 'forward' ? year === 2026 ? ref.label : String(year) : ref.label;
+  const toLabel = direction === 'forward' ? ref.label : year === 2026 ? ref.label : String(year);
+  const formattedInput = valid ? direction === 'forward' ? historicalMoney(amount) : currencyMoney(amount) : '';
+  const formattedResult = valid ? direction === 'forward' ? currencyMoney(value) : historicalMoney(value) : '';
+  $('result-context').textContent = valid ? `${formattedInput} in ${fromLabel} has the buying power of` : 'Enter an amount to see its equivalent buying power.';
+  $('result-value').textContent = valid ? formattedResult : '—';
+  $('result-explanation').textContent = valid ? `in ${toLabel}${!isUS() && direction === 'reverse' && year < 1966 && !pounds ? ' (AUD equivalent)' : ''}.` : 'The conversion will update automatically.';
+  $('result-period').textContent = direction === 'forward' ? ref.short.toUpperCase() : `${year}${year < (isUS() ? 1913 : 1901) ? ' · ESTIMATE' : ''}`;
+  $('multiplier').textContent = `${number(toIndex / fromIndex)}×`;
+  $('multiplier-note').textContent = `Prices in ${direction === 'forward' ? '2026' : year} ÷ ${direction === 'forward' ? year : '2026'}`;
+  const change = (toIndex / fromIndex - 1) * 100;
+  $('price-change').textContent = `${change > 0 ? '+' : ''}${number(change, 1)}%`;
+  $('price-note').textContent = 'For the selected direction';
+  $('span').textContent = number(2026 - year, 0);
+  $('copy').disabled = !valid;
+  $('swap').disabled = !valid;
+  $('csv').disabled = !valid;
+  $('calculation').textContent = valid ? `${formattedInput}${pounds ? direction === 'forward' ? ' × 2' : '' : ''} × ${number(toIndex, 4)} ÷ ${number(fromIndex, 4)}${pounds && direction === 'reverse' ? ' ÷ 2' : ''} = ${formattedResult}` : 'Amount × destination index ÷ starting index';
+  $('current-method').textContent = `Selected reference: ${ref.label}, with a ${isUS() ? 'CPI-U' : 'CPI'} index of ${number(ref.index, 4)} (${data.base}). Choose the latest published month or the average of all eight published months in 2026.`;
+  const baseAmount = valid ? direction === 'forward' ? amount * unitFactor : convert(amount, ref.index, historical.index) : 0;
+  const resultText = valid ? `${formattedInput} in ${fromLabel} ≈ ${formattedResult} in ${toLabel}${!isUS() && direction === 'reverse' && year < 1966 && !pounds ? ' (AUD equivalent)' : ''}. Currency: ${currency}. ${historical.basis}. 2026 reference: ${ref.label}. ${isUS() ? 'BLS / Minneapolis Fed' : 'ABS'} data checked ${data.checkedAt}.${!isUS() && year < 1966 ? ' Pre-1966 dollars are hypothetical equivalents; £1 = A$2.' : ''}${!isUS() && year < 1901 ? ' Sydney historical estimate.' : ''}` : '';
+  state = { year, ref, historical, amount, value, valid, pounds, baseAmount, resultText };
+  drawChart();
+  updateTable();
+}
+
+function drawChart() {
+  const { year, ref, historical, baseAmount, valid } = state;
+  if (!valid) {
+    $('chart').replaceChildren();
+    $('chart-subtitle').textContent = 'Enter a valid amount to draw the comparison.';
+    $('chart-footnote').textContent = '';
+    return;
+  }
+  const points = data.annual.filter(row => row.year >= year).map(row => ({ year: row.year, value: convert(baseAmount, historical.index, row.index) }));
+  points.push({ year: 2026, value: convert(baseAmount, historical.index, ref.index) });
+  const w = 820, h = 280, left = 72, right = 760, top = 30, bottom = 224;
+  const max = Math.max(...points.map(p => p.value), 1) * 1.15;
+  const x = y => year === 2026 ? (left + right) / 2 : left + (y - year) / (2026 - year) * (right - left);
+  const y = value => bottom - value / max * (bottom - top);
+  const compact = n => new Intl.NumberFormat('en-AU', { notation: Math.abs(n) >= 1e4 ? 'compact' : 'standard', maximumFractionDigits: n < 1 ? 2 : 0 }).format(n);
+  let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">Equivalent ${currency} purchasing power, ${year} to 2026</title><desc id="chart-desc">${currencyMoney(baseAmount)} in ${year} corresponds to ${currencyMoney(points.at(-1).value)} in ${ref.label}. All plotted values are ${currency}${isUS() ? '' : ' equivalents'}. Historical years use annual averages; the final point uses a partial-year 2026 reference. The complete values are available in the data table below.</desc>`;
+  for (let tick = 0; tick <= 4; tick++) {
+    const val = max * tick / 4, yy = y(val);
+    svg += `<line x1="${left}" x2="${right}" y1="${yy}" y2="${yy}" stroke="#e1e7e5" /><text x="${left - 12}" y="${yy + 4}" text-anchor="end" fill="#536970" font-size="12">$${compact(val)}</text>`;
+  }
+  const tickYears = year === 2026 ? [2026] : [...new Set([year, Math.round(year + (2026 - year) / 3), Math.round(year + (2026 - year) * 2 / 3), 2026])];
+  for (const tick of tickYears) svg += `<text x="${x(tick)}" y="${bottom + 30}" text-anchor="middle" fill="#536970" font-size="12">${tick}</text>`;
+  const path = points.map((p, i) => `${i ? 'L' : 'M'}${x(p.year)},${y(p.value)}`).join(' ');
+  if (points.length > 1) svg += `<path d="${path} L${x(2026)},${bottom} L${x(year)},${bottom} Z" fill="#17595b" opacity=".06"/><path d="${path}" fill="none" stroke="#17595b" stroke-width="3" stroke-linejoin="round"/>`;
+  const last = points.at(-1);
+  svg += `<circle cx="${x(last.year)}" cy="${y(last.value)}" r="5" fill="#a56925" stroke="white" stroke-width="2"/><text x="${right}" y="16" text-anchor="end" fill="#855921" font-size="12">2026: ${compact(last.value)} ${currency}</text></svg>`;
+  $('chart').innerHTML = svg;
+  $('chart-subtitle').textContent = `Cost of the same basket, starting at ${currencyMoney(baseAmount)} in ${year}.`;
+  $('chart-footnote').textContent = `Annual averages through 2025 · 2026 endpoint: ${ref.label}${isUS() ? year < 1913 ? ' · Pre-1913 values are historical estimates' : '' : year < 1901 ? ' · Pre-1901 values are Sydney estimates' : ''}${isUS() && year <= 2025 ? ' · 2025 uses 11 published months' : ''}.`;
+}
+
+function comparisonRows() {
+  const { ref, baseAmount, valid } = state;
+  const rows = [...data.annual, { year: 2026, index: ref.index, basis: ref.label }];
+  return rows.map(row => ({ ...row, value: valid ? convert(baseAmount, row.index, ref.index) : null }));
+}
+
+function updateTable() {
+  $('table-caption').textContent = state.valid ? `What ${currencyMoney(state.baseAmount)} in each historical year buys in ${state.ref.label}. The chart above follows one basket from the selected year; this table compares the same nominal amount across all years.` : 'Enter a valid amount to view converted values.';
+  $('data-rows').replaceChildren(...comparisonRows().map(row => {
+    const tr = document.createElement('tr');
+    for (const value of [row.year, row.basis, number(row.index, 4), row.value === null ? '—' : currencyMoney(row.value)]) {
+      const cell = document.createElement('td');
+      cell.textContent = value;
+      tr.append(cell);
+    }
+    if (row.year === state.year) tr.className = 'selected-row';
+    return tr;
+  }));
+}
+
+$('conversion-form').addEventListener('submit', event => event.preventDefault());
+$('amount').addEventListener('input', update);
+$('currency').addEventListener('change', () => { configureCurrency(); update(); });
+$('year').addEventListener('change', update);
+$('year-range').addEventListener('input', event => { $('year').value = event.target.value; update(); });
+$('basis').addEventListener('change', update);
+$('unit').addEventListener('change', () => {
+  if (direction === 'forward' && state.valid) $('amount').value = ($('unit').value === 'pounds' ? state.amount / 2 : state.amount * 2).toFixed(2);
+  update();
+});
+document.querySelectorAll('input[name="direction"]').forEach(input => input.addEventListener('change', () => { direction = input.value; update(); }));
+document.querySelectorAll('[data-year]').forEach(button => button.addEventListener('click', () => { $('year').value = button.dataset.year; update(); }));
+$('swap').addEventListener('click', () => {
+  $('amount').value = state.value.toFixed(2);
+  direction = direction === 'forward' ? 'reverse' : 'forward';
+  document.querySelector(`input[name="direction"][value="${direction}"]`).checked = true;
+  update();
+});
+$('reset-comparison').addEventListener('click', () => {
+  direction = 'forward';
+  $('conversion-form').reset();
+  $('currency').value = currency;
+  $('year').value = '2000';
+  $('amount').value = '100';
+  update();
+});
+$('copy').addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(state.resultText);
+    $('copy').textContent = 'Copied';
+    $('action-status').textContent = 'Conversion copied with its data reference.';
+    clearTimeout(copyTimer);
+    copyTimer = setTimeout(() => { $('copy').textContent = 'Copy result'; }, 2200);
+  } catch {
+    $('action-status').textContent = 'Automatic copying is unavailable. Select and copy the result below.';
+    const selection = window.getSelection();
+    const range = document.createRange();
+    range.selectNodeContents($('result'));
+    selection.removeAllRanges();
+    selection.addRange(range);
+    $('copy').textContent = 'Select result to copy';
+  }
+});
+$('csv').addEventListener('click', () => {
+  const rows = comparisonRows();
+  const encode = value => `"${String(value).replaceAll('"', '""')}"`;
+  const csv = [['Year', 'Series', `Linked index (${data.base})`, `Nominal amount (${currency}${isUS() ? '' : ' equivalent'})`, `Equivalent value in 2026 (${currency})`, '2026 reference', '2026 index', 'Data checked', 'Historical source', isUS() ? 'Annual CPI-U source' : 'Quarterly source', 'Monthly source'], ...rows.map(row => [row.year, row.basis, row.index, state.baseAmount, row.value.toFixed(2), state.ref.label, state.ref.index, data.checkedAt, data.sources.history, isUS() ? data.sources.annual : data.sources.quarterly, data.sources.monthly])].map(row => row.map(encode).join(',')).join('\r\n');
+  const url = URL.createObjectURL(new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' }));
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${isUS() ? 'us' : 'australian'}-dollar-comparison-${data.annual[0].year}-2026-${$('basis').value}.csv`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  $('action-status').textContent = 'Comparison CSV downloaded.';
+});
+$('print').addEventListener('click', () => window.print());
+configureCurrency();
+update();
+</script>
+</body>
+</html>

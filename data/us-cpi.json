@@ -1,0 +1,1200 @@
+{
+  "checkedAt": "2026-10-10",
+  "releasedAt": "2026-09-11",
+  "base": "1982\u20131984 = 100",
+  "link": {
+    "year": 1913,
+    "historicalIndex": 29.7,
+    "monthlyAnnualIndex": 9.883333333333335,
+    "factor": 0.3327721661054995
+  },
+  "seriesId": "CUUR0000SA0",
+  "missingPeriods": [
+    "2025-10"
+  ],
+  "sources": {
+    "history": "https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1800-",
+    "monthly": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
+    "annual": "https://api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SA0",
+    "method": "https://www.bls.gov/cpi/overview.htm",
+    "missingMonth": "https://www.bls.gov/cpi/additional-resources/2025-federal-government-shutdown-impact-cpi-faq.htm"
+  },
+  "annual": [
+    {
+      "year": 1800,
+      "index": 16.971380471380474,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1801,
+      "index": 16.638608305274975,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1802,
+      "index": 14.309203142536477,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1803,
+      "index": 14.974747474747476,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1804,
+      "index": 14.974747474747476,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1805,
+      "index": 14.974747474747476,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1806,
+      "index": 15.640291806958475,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1807,
+      "index": 14.641975308641976,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1808,
+      "index": 15.973063973063976,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1809,
+      "index": 15.640291806958475,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1810,
+      "index": 15.640291806958475,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1811,
+      "index": 16.638608305274975,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1812,
+      "index": 16.971380471380474,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1813,
+      "index": 19.30078563411897,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1814,
+      "index": 20.964646464646467,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1815,
+      "index": 18.302469135802472,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1816,
+      "index": 16.971380471380474,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1817,
+      "index": 15.973063973063976,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1818,
+      "index": 15.307519640852975,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1819,
+      "index": 15.307519640852975,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1820,
+      "index": 13.976430976430978,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1821,
+      "index": 13.310886644219979,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1822,
+      "index": 13.310886644219979,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1823,
+      "index": 11.979797979797981,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1824,
+      "index": 10.981481481481483,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1825,
+      "index": 11.314253647586982,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1826,
+      "index": 11.314253647586982,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1827,
+      "index": 11.314253647586982,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1828,
+      "index": 10.981481481481483,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1829,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1830,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1831,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1832,
+      "index": 9.983164983164984,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1833,
+      "index": 9.650392817059485,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1834,
+      "index": 9.983164983164984,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1835,
+      "index": 10.315937149270484,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1836,
+      "index": 10.981481481481483,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1837,
+      "index": 11.314253647586982,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1838,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1839,
+      "index": 10.648709315375983,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1840,
+      "index": 9.983164983164984,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1841,
+      "index": 10.315937149270484,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1842,
+      "index": 9.650392817059485,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1843,
+      "index": 9.317620650953986,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1844,
+      "index": 9.317620650953986,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1845,
+      "index": 9.317620650953986,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1846,
+      "index": 8.984848484848486,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1847,
+      "index": 9.317620650953986,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1848,
+      "index": 8.652076318742987,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1849,
+      "index": 8.319304152637487,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1850,
+      "index": 8.319304152637487,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1851,
+      "index": 8.319304152637487,
+      "basis": "Vermont family-living price estimate"
+    },
+    {
+      "year": 1852,
+      "index": 8.319304152637487,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1853,
+      "index": 8.319304152637487,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1854,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1855,
+      "index": 9.317620650953986,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1856,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1857,
+      "index": 9.317620650953986,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1858,
+      "index": 8.652076318742987,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1859,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1860,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1861,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1862,
+      "index": 9.983164983164984,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1863,
+      "index": 12.31257014590348,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1864,
+      "index": 15.640291806958475,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1865,
+      "index": 15.307519640852975,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1866,
+      "index": 14.641975308641976,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1867,
+      "index": 13.976430976430978,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1868,
+      "index": 13.310886644219979,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1869,
+      "index": 13.310886644219979,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1870,
+      "index": 12.64534231200898,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1871,
+      "index": 11.979797979797981,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1872,
+      "index": 11.979797979797981,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1873,
+      "index": 11.979797979797981,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1874,
+      "index": 11.314253647586982,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1875,
+      "index": 10.981481481481483,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1876,
+      "index": 10.648709315375983,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1877,
+      "index": 10.648709315375983,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1878,
+      "index": 9.650392817059485,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1879,
+      "index": 9.317620650953986,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1880,
+      "index": 9.650392817059485,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1881,
+      "index": 9.650392817059485,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1882,
+      "index": 9.650392817059485,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1883,
+      "index": 9.317620650953986,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1884,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1885,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1886,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1887,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1888,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1889,
+      "index": 8.984848484848486,
+      "basis": "Hoover historical price estimate"
+    },
+    {
+      "year": 1890,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1891,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1892,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1893,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1894,
+      "index": 8.652076318742987,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1895,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1896,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1897,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1898,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1899,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1900,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1901,
+      "index": 8.319304152637487,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1902,
+      "index": 8.652076318742987,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1903,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1904,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1905,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1906,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1907,
+      "index": 9.317620650953986,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1908,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1909,
+      "index": 8.984848484848486,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1910,
+      "index": 9.317620650953986,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1911,
+      "index": 9.317620650953986,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1912,
+      "index": 9.650392817059485,
+      "basis": "Rees historical cost-of-living estimate"
+    },
+    {
+      "year": 1913,
+      "index": 9.883333333333335,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1914,
+      "index": 10.016666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1915,
+      "index": 10.108333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1916,
+      "index": 10.883333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1917,
+      "index": 12.825000000000001,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1918,
+      "index": 15.041666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1919,
+      "index": 17.333333333333332,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1920,
+      "index": 20.041666666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1921,
+      "index": 17.849999999999998,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1922,
+      "index": 16.75,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1923,
+      "index": 17.05,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1924,
+      "index": 17.125,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1925,
+      "index": 17.541666666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1926,
+      "index": 17.7,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1927,
+      "index": 17.358333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1928,
+      "index": 17.158333333333335,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1929,
+      "index": 17.158333333333335,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1930,
+      "index": 16.7,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1931,
+      "index": 15.208333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1932,
+      "index": 13.641666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1933,
+      "index": 12.933333333333332,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1934,
+      "index": 13.383333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1935,
+      "index": 13.725,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1936,
+      "index": 13.866666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1937,
+      "index": 14.383333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1938,
+      "index": 14.091666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1939,
+      "index": 13.908333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1940,
+      "index": 14.008333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1941,
+      "index": 14.725,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1942,
+      "index": 16.333333333333332,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1943,
+      "index": 17.308333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1944,
+      "index": 17.591666666666665,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1945,
+      "index": 17.991666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1946,
+      "index": 19.516666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1947,
+      "index": 22.325,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1948,
+      "index": 24.041666666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1949,
+      "index": 23.808333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1950,
+      "index": 24.066666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1951,
+      "index": 25.958333333333332,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1952,
+      "index": 26.55,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1953,
+      "index": 26.766666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1954,
+      "index": 26.849999999999998,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1955,
+      "index": 26.775000000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1956,
+      "index": 27.183333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1957,
+      "index": 28.09166666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1958,
+      "index": 28.858333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1959,
+      "index": 29.150000000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1960,
+      "index": 29.575,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1961,
+      "index": 29.891666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1962,
+      "index": 30.25,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1963,
+      "index": 30.625,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1964,
+      "index": 31.016666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1965,
+      "index": 31.508333333333336,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1966,
+      "index": 32.458333333333336,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1967,
+      "index": 33.358333333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1968,
+      "index": 34.78333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1969,
+      "index": 36.68333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1970,
+      "index": 38.824999999999996,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1971,
+      "index": 40.49166666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1972,
+      "index": 41.81666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1973,
+      "index": 44.4,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1974,
+      "index": 49.30833333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1975,
+      "index": 53.81666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1976,
+      "index": 56.90833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1977,
+      "index": 60.60833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1978,
+      "index": 65.23333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1979,
+      "index": 72.575,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1980,
+      "index": 82.40833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1981,
+      "index": 90.925,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1982,
+      "index": 96.5,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1983,
+      "index": 99.60000000000001,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1984,
+      "index": 103.88333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1985,
+      "index": 107.56666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1986,
+      "index": 109.60833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1987,
+      "index": 113.625,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1988,
+      "index": 118.25833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1989,
+      "index": 123.96666666666665,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1990,
+      "index": 130.65833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1991,
+      "index": 136.19166666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1992,
+      "index": 140.31666666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1993,
+      "index": 144.45833333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1994,
+      "index": 148.225,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1995,
+      "index": 152.38333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1996,
+      "index": 156.85,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1997,
+      "index": 160.51666666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1998,
+      "index": 163.00833333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 1999,
+      "index": 166.57500000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2000,
+      "index": 172.20000000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2001,
+      "index": 177.0666666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2002,
+      "index": 179.875,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2003,
+      "index": 183.95833333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2004,
+      "index": 188.88333333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2005,
+      "index": 195.29166666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2006,
+      "index": 201.59166666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2007,
+      "index": 207.34241666666665,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2008,
+      "index": 215.3025,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2009,
+      "index": 214.537,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2010,
+      "index": 218.05550000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2011,
+      "index": 224.93916666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2012,
+      "index": 229.59391666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2013,
+      "index": 232.95708333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2014,
+      "index": 236.73616666666666,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2015,
+      "index": 237.01700000000002,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2016,
+      "index": 240.00716666666665,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2017,
+      "index": 245.11958333333334,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2018,
+      "index": 251.10683333333336,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2019,
+      "index": 255.65741666666668,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2020,
+      "index": 258.8111666666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2021,
+      "index": 270.96975000000003,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2022,
+      "index": 292.6549166666667,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2023,
+      "index": 304.7015833333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2024,
+      "index": 313.6888333333333,
+      "basis": "Annual average CPI-U"
+    },
+    {
+      "year": 2025,
+      "index": 321.943,
+      "basis": "Annual average CPI-U (11 published months)"
+    }
+  ],
+  "reference2026": {
+    "latest": {
+      "index": 334.98,
+      "label": "August 2026",
+      "short": "Aug 2026"
+    },
+    "ytd": {
+      "index": 331.655375,
+      "label": "January\u2013August 2026 average",
+      "short": "Jan\u2013Aug average"
+    },
+    "monthly": [
+      {
+        "period": "2026-01",
+        "index": 325.252
+      },
+      {
+        "period": "2026-02",
+        "index": 326.785
+      },
+      {
+        "period": "2026-03",
+        "index": 330.213
+      },
+      {
+        "period": "2026-04",
+        "index": 333.02
+      },
+      {
+        "period": "2026-05",
+        "index": 335.123
+      },
+      {
+        "period": "2026-06",
+        "index": 333.952
+      },
+      {
+        "period": "2026-07",
+        "index": 333.918
+      },
+      {
+        "period": "2026-08",
+        "index": 334.98
+      }
+    ]
+  }
+}
