@@ -6,6 +6,8 @@ The **Currency** selector also supports **US dollars (USD)** with the same conve
 
 ## Open the app
 
+Use the hosted app at **https://incanberra.github.io/dollar-studio/**. GitHub Pages publishes the self-contained app after the checks pass on each push to `main`.
+
 Double-click **dist/Australian Dollar Studio.html**. This single file contains the entire app and the verified CPI snapshot. No installation, account, server or API key is needed. It can be copied to another computer or served by a static website host.
 
 For local development, install **Node.js 22 or newer**, run `npm run dev`, and open **http://127.0.0.1:4173/**. There are no JavaScript dependencies to install.
